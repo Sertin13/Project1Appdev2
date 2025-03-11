@@ -37,14 +37,14 @@ public class Bank {
         return name;
     }
     public int getID() {
-        return ID;
+        return this.ID;
     }
     public ArrayList<Account> getBANKACCOUNTS() {
         return BANKACCOUNTS;
     }
 
     public <T> void showAccounts(Class<T> accountType) {
-        for (Account account : BANKACCOUNTS) {
+        for (Account account : this.BANKACCOUNTS) {
             if (accountType.isInstance(account)) {
                 System.out.println(account);
             }
@@ -91,24 +91,7 @@ public class Bank {
 
 
 }
-//Classes
-class BankComparator implements Comparator<Bank> {
-    @Override
-    public int compare(Bank b1, Bank b2) {
-        return b1.name.compareTo(b2.name);
-    }
-}
 
-class BankIdComparator implements Comparator<Bank> {
-    @Override
-    public int compare(Bank b1, Bank b2) {
-        return Integer.compare(b1.ID, b2.ID);
-    }
-}
 
-class BankCredentialsComparator implements Comparator<Bank> {
-    @Override
-    public int compare(Bank b1, Bank b2) {
-        return b1.password.compareTo(b2.password);
-    }
-}
+
+
